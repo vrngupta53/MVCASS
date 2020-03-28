@@ -11,6 +11,7 @@ class User{
         $count = $row["cnt"];
 
         if($count > 0){
+            session_start();
             $_SESSION['email'] = $email;
             return 0;
         }else{

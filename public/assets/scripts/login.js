@@ -8,11 +8,7 @@ $(document).ready(function(){
             data:{email:lemail, password:lpassword},
             success:function(response){
                 if(response == 0){
-                   /* window.location = ""; 
-                   put address of page to be redirected to
-                   */
-
-                   alert("works!!");
+                    window.location = "/home/latest"; 
                 }else{
                     let msg = "Invalid email or password";
                     $("#loginmsg").html(msg);

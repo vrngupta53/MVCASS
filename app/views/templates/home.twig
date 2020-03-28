@@ -1,0 +1,24 @@
+{% extends "templates/base.twig" %}
+
+{% block includes %}
+    <script src="/assets/scripts/home.js"></script>
+{% endblock %}
+{% block body %}
+    <div id="div_upload">
+        <div id="up_msg"></div>
+        <form action="" method="post" enctype="multipart/form-data">
+            Select image to upload:
+            <input type="file" name="imgupload" id="imgupload">
+            <input type="text" name="caption" id="caption">
+            <input type="button" id="upload-button" value="Upload" >
+        </form>
+    </div>
+    <p>Hi!!!</p>
+    {% for post in posts %}
+        <h2>{{post.username}}</h2>
+        <p>{{post.created}}</p>
+        <p>{{post.caption}}</p>
+        <img src="/{{post.addr}}">
+        <input type="button" id="{{post.id}}" value="Like">
+    {% endfor %}
+{% endblock %}  

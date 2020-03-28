@@ -12,5 +12,5 @@ class Login{
         $password = $_POST["password"];
         $response = \Model\User::verify($email, $password);
         echo $response;
-    } 
+    }
 }

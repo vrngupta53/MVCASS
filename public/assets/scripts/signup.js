@@ -13,10 +13,7 @@ $(document).ready(function(){
                 data:{username:susername, password:spassword, email:semail},
                 success:function(response){
                     if(response == 0){
-                        $("#signupmsg").html("");
-                        $("#susername").val("");
-                        $("semail").val("");
-                        $("spassword").val("");
+                        alert("account created");
                     }else{
                         let msg = "Email already registered";
                         $("#signupmsg").html(msg);

@@ -1,14 +1,11 @@
-{% extends "templates/base.twig" %}
-
-    {% block title %}MVCASS{% endblock %}
-
-    {% block includes %}
+<html>
+<head>
+    <title>MVCASS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="assets/scripts/login.js"></script>
     <script src="assets/scripts/signup.js"></script>
-    {% endblock %}
-
-
-{% block body %}
+</head>
+<body>
     <div id="div_login">
         <h1>Login</h1>
         <div id="loginmsg"></div>
@@ -41,5 +38,5 @@
             <input type="button" value="Submit" name="signup-button" id="signup-button" />
         </div>
     </div>
-{% endblock %}
-  
+</body>
+</html>       

@@ -36,4 +36,12 @@ class Post{
         $posts = $stmt->fetchAll();
         return $posts;
     }
+
+    public static function get_post($postid){
+        $db = \DB::get_instance();
+        $stmt = $db->prepare("SELECT * FROM posts WHERE id = ?");
+        $stmt->execute([$postid]);
+        $post = $stmt->fetch();
+        return $post;
+    }
 }

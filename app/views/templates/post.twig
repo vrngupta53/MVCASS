@@ -1,0 +1,13 @@
+{% extends "templates/base.twig" %}
+
+{% block title %}Post by {{post.username}}{% endblock %}
+
+{% block body %}
+    <h1>{{post.username}}</h1>
+    <p>{{post.caption}}</p>
+    <img src="/{{post.addr}}">
+    <strong>Comments</strong></br>
+    {% for comment in comments %}
+    <p><strong>{{comment.username}}:</strong> {{comment.comment}}</p>
+    {% endfor %}
+{% endblock %}

@@ -7,5 +7,9 @@ Toro::serve(array(
     "/home/:string" => "\Controller\Home",
     "/signup" =>"\Controller\Signup",
     "/post" => "\Controller\Post",
-    "/post/:string" => "\Controller\Post",
+    "/post/:number" => "Controller\Post",
+    "/like" => "\Controller\Like",
+    "/comment" => "\Controller\Comment",
+    "/profile" => "\Controller\Profile",
+    
 ));

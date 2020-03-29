@@ -10,7 +10,7 @@ class Post{
             header('Location: /');
         }
         $comments = \Model\Comment::get_comments($postid);
-        $post = \Model\Post::get_post($postid);
+        $post = \Model\Post::get_post_by_postid($postid);
         echo \View\Loader::make()->render("templates/post.twig", array(
             "comments" => $comments,
             "post" => $post

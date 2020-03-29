@@ -11,5 +11,6 @@ Toro::serve(array(
     "/like" => "\Controller\Like",
     "/comment" => "\Controller\Comment",
     "/profile" => "\Controller\Profile",
+    "/profile/:string" => "\Controller\Profile",
     
 ));

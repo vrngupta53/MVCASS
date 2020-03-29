@@ -1,0 +1,40 @@
+{% extends "templates/base.twig" %}
+
+{% block title %}{{user.username}}'s Profile{% endblock %}
+
+{% block includes %}
+    <script src="/assets/scripts/like.js"></script>
+    <script src="/assets/scripts/comment.js"></script>
+    <script src="/assets/scripts/profile.js"></script>
+
+{% endblock %}
+
+{% block body %}
+    <img src="/{{user.addr}}" alt = "">
+    <div id="div_msg"></div>
+    <p>Edit your Profile</p>
+    <label for="username">Username:</label>
+    <input type="text" id="username" value="{{user.username}}" name="username">
+    <input type="button" id="username-button" value="Change">
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"/>
+    <input type="button" id="pass-button" value="Change">
+    <p>Change your profile photo</p>
+    <form action="" method="post" enctype="multipart/form-data">
+        Select image to upload:
+        <input type="file" name="imgupload" id="imgupload">
+        <input type="button" id="upload-button" value="Upload" >
+    </form>
+
+    {% for post in posts %}
+        <h2>{{post.username}}</h2>
+        <p>{{post.created}}</p>
+        <p>{{post.caption}}</p>
+        <img src="/{{post.addr}}">
+        <div id="div_comm_{{post.id}}"></div>
+        <input type="button" id="butt-{{post.id}}" value="Like:{{post.likes}}" onclick = "likePosts({{post.id}})">
+        <a href="/post/{{post.id}}">Comments</a>
+        <input type="text" id="comm-{{post.id}}" placeholder="Comment">
+        <input type="button" id="comm-butt-{{post.id}}" value="submit" onclick="addComment({{post.id}})">
+    {% endfor %}
+{% endblock %}

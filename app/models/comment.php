@@ -20,4 +20,10 @@ class Comment{
         $comments = $stmt->fetchAll();
         return $comments;
     }
+
+    public static function update_username($email, $username){
+        $db = \DB::get_instance();
+        $stmt = $db->prepare("UPDATE comments SET username = ? WHERE uemail = ?");
+        $stmt->execute([$username, $email]);
+    }
 }

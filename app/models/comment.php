@@ -11,6 +11,8 @@ class Comment{
         $datetime = date("Y-m-d H:i:s");
         $stmt = $db->prepare("INSERT INTO comments(postid, uemail, username, comment, created) VALUES(?, ?, ?, ?, ?)");
         $stmt->execute([$postid, $email, $username, $comment, $datetime]);
+        $stmt = $db->prepare("UPDATE posts SET trend = trend + 1 WHERE id = ?");
+        $stmt->execute([$postid]);
     }
 
     public static function get_comments($postid){

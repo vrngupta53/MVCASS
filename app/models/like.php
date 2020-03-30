@@ -17,6 +17,8 @@ class Like{
             $likes = $likes+1;
             $stmt = $db->prepare("UPDATE posts SET likes = likes + 1 WHERE id = ?");
             $stmt->execute([$postid]);
+            $stmt = $db->prepare("UPDATE posts SET trend = trend + 1 WHERE id = ?");
+            $stmt->execute([$postid]);
             return $likes;
         }else{
             $stmt = $db->prepare("DELETE FROM likes WHERE postid = ? AND uemail = ?");
@@ -26,6 +28,8 @@ class Like{
             $likes = ($stmt->fetch())["likes"];
             $likes = $likes-1;
             $stmt = $db->prepare("UPDATE posts SET likes = likes - 1 WHERE id = ?");
+            $stmt->execute([$postid]);
+            $stmt = $db->prepare("UPDATE posts SET trend = trend - 1 WHERE id = ?");
             $stmt->execute([$postid]);
             return $likes;
         }

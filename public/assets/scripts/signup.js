@@ -15,8 +15,8 @@ $(document).ready(function(){
                     if(response == 0){
                         $("#signupmsg").html("");
                         $("#susername").val("");
-                        $("semail").val("");
-                        $("spassword").val("");
+                        $("#semail").val("");
+                        $("#spassword").val("");
                     }else{
                         let msg = "Email already registered";
                         $("#signupmsg").html(msg);

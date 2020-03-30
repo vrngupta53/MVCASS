@@ -4,27 +4,51 @@
     <script src="/assets/scripts/home.js"></script>
     <script src="/assets/scripts/like.js"></script>
     <script src="/assets/scripts/comment.js"></script>
+    <link rel="stylesheet" href="/assets/styles/home.css">
 {% endblock %}
 
 {% block body %}
+    {% include("templates/navbar.twig") %}
     <div id="div_upload">
-        <div id="up_msg"></div>
+        <div class="msg" id="div_msg"></div>
+        <p class="msg">Select image to upload:</p>
         <form action="" method="post" enctype="multipart/form-data">
-            Select image to upload:
-            <input type="file" name="imgupload" id="imgupload">
-            <input type="text" name="caption" id="caption">
-            <input type="button" id="upload-button" value="Upload" >
+            <div id="div_hidden">
+                <input type="file" name="imgupload" id="imgupload">
+            </div>
+            <div id="div_choose">
+                <input type="button" class="general-button" name="choose-button" id="choose-button" value="Choose image">
+            </div>
+            <div id="div_caption">
+                <input type="text" name="caption" id="caption" placeholder="caption">
+            </div>
+            <div id="div_upload_button">
+                <input type="button" class="general-button" id="upload-button" value="Upload" >
+            </div>
         </form>
     </div>
     {% for post in posts %}
-        <h2>{{post.username}}</h2>
-        <p>{{post.created}}</p>
-        <p>{{post.caption}}</p>
-        <img src="/{{post.addr}}">
-        <div id="div_comm_{{post.id}}"></div>
-        <input type="button" id="butt-{{post.id}}" value="Like:{{post.likes}}" onclick = "likePosts({{post.id}})">
-        <a href="/post/{{post.id}}">Comments</a>
-        <input type="text" id="comm-{{post.id}}" placeholder="Comment">
-        <input type="button" id="comm-butt-{{post.id}}" value="submit" onclick="addComment({{post.id}})">
+    <div class="post">
+        <div class="username"> 
+            <h2>{{post.username}}</h2>
+        </div>
+        <div class="time">
+            <p>{{post.created}}</p>
+        </div>
+        <div class="caption">    
+            <p>{{post.caption}}</p>
+        </div>
+        <div class="image">
+            <img src="/{{post.addr}}">
+        </div>
+        <div class="like">
+            <input type="button" class="like-button" id="butt-{{post.id}}" value="Like:{{post.likes}}" onclick = "likePosts({{post.id}})">
+            <a href="/post/{{post.id}}">Comments</a>
+        </div>
+        <div class="comment">
+            <input type="text" id="comm-{{post.id}}" placeholder="Comment">
+            <input type="button" class="general-button" id="comm-butt-{{post.id}}" value="submit" onclick="addComment({{post.id}})">
+        </div>
+    </div>
     {% endfor %}
 {% endblock %}  

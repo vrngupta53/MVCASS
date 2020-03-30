@@ -1,0 +1,56 @@
+body{
+    margin:0px;
+    margin-top: 200px;
+}
+
+#titlebar{
+    text-align:center;
+    overflow:hidden;
+    background-color: #333;
+    position: fixed; 
+    top: 0;
+    width: 100%;
+}
+
+#titlebar p {
+    display: inline-block;
+    font-size: 50px;
+    color: #f2f2f2;
+    text-align: center;
+    padding:14px 16px;
+    text-decoration: none;
+}
+
+.msg{
+    font-size: 50px;
+    margin-bottom: 0px;
+    margin-top: 20px;
+}
+
+.msg p{
+    margin-bottom: 10px;
+}
+
+#div_login{
+    text-align: center;
+}
+
+#div_signup{
+    text-align: center;
+}
+
+.field{
+    margin: 10px;
+}
+
+.general-button{
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    transition-duration: 0.5s;
+}
+
+.general-button:hover{
+    background-color: black;
+    color: white;
+}

@@ -13,7 +13,7 @@ $(document).ready(function(){
             processData: false,
             success: function(response){
                 if(response != 0){
-                    let msg = "file upload unsuccessful";
+                    let msg = "Image upload unsuccessful";
                     $("#div_msg").html(msg);
                 }else{
                     $("#caption").val("");
@@ -22,6 +22,10 @@ $(document).ready(function(){
 
         })
     });    
+
+    $("#choose-button").click(function(){
+        $("#imgupload").click();
+    });
 }); 
 
 

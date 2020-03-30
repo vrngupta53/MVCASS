@@ -5,40 +5,48 @@
     {% block includes %}
     <script src="assets/scripts/login.js"></script>
     <script src="assets/scripts/signup.js"></script>
+    <link rel="stylesheet" href="/assets/styles/login.css">
     {% endblock %}
 
 
 {% block body %}
+    <div id="titlebar">
+        <p>MVCASS</p>
+    </div>
     <div id="div_login">
-        <h1>Login</h1>
-        <div id="loginmsg"></div>
-        <div>
+        <div class="msg">
+            <p>Login</p>
+        </div>
+        <div class="msg" id="loginmsg"></div>
+        <div class="field">
             <input type="text" id="lemail" name="lemail" placeholder="Email" />
         </div>
-        <div>
+        <div class="field">
             <input type="password" id="lpassword" name="lpassword" placeholder="Password" />
         </div>
-        <div>
-            <input type="button" value="Submit" name="login-button" id="login-button"/>
+        <div class="field">
+            <input type="button" class="general-button" value="Submit" name="login-button" id="login-button"/>
         </div>
     </div>
     <div id="div_signup">
-        <h1>Signup</h1>
+        <div class="msg">
+            <p>Signup</p>
+        </div>
         <div id="signupmsg"></div>
-        <div>
-            <label for="susername">Username:</label>
+        <div class="field">
+            <label for="susername">Username</label><br/>
             <input type="text" id="susername" name="susername" />
         </div>
-        <div>
-            <label for="semail">Email:</label>
+        <div class="field">
+            <label for="semail">Email</label><br/>
             <input type="text" id="semail" name="semail" />
         </div>
-        <div>
-            <label for="spassword">Password:</label>
+        <div class="field">
+            <label for="spassword">Password</label><br/>
             <input type="password" id="spassword" name="spassword"/>
         </div>
         <div>
-            <input type="button" value="Submit" name="signup-button" id="signup-button" />
+            <input type="button" class="general-button" value="Submit" name="signup-button" id="signup-button" />
         </div>
     </div>
 {% endblock %}

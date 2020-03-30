@@ -1,0 +1,131 @@
+body {
+  margin:0px;
+  margin-top: 20px; 
+}
+
+#navbar {
+  text-align:center;
+  overflow:hidden;
+  background-color: #333;
+  position: fixed; 
+  top: 0;
+  width: 100%; 
+  }
+  
+#navbar a {
+  display: inline-block;
+  color: #f2f2f2;
+  text-align: center;
+  padding:14px 16px;
+  text-decoration: none;
+  }
+
+#navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+#edit_profile{
+   text-align: center;
+}
+
+.msg{
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+#div_hidden{
+  height:0px;
+  overflow:hidden;
+}
+
+#div_choose{
+  margin: 10px;
+}
+
+.post{
+  margin:40px;
+}
+
+.username{
+   text-align:center;
+   width: 300px;
+   margin: 0 auto;
+}
+
+.time{
+   text-align:center;
+   width: 300px;
+   margin: 0 auto;
+}
+
+.caption{
+   text-align:center;
+   width: 300px;
+   margin: 0 auto;
+}
+
+.image{
+   width: 500px;
+   height:500px;
+   margin: 0 auto;
+}
+.image img{
+   width: 100%;
+   height:100%;
+}
+
+.like{
+   text-align:center;
+   width: 300px;
+   margin: 0 auto;
+   white-space: nowrap;
+}
+
+.comment{
+   text-align:center;
+   width: 300px;
+   margin: 0 auto;
+}
+
+.like-button{
+   width:100px;
+   margin:10px;
+   background-color: white;
+   color: black;
+   border: 2px solid blue;
+   transition-duration: 0.5s;
+}
+
+
+.like-button:hover {
+   background-color: blue;
+   color: white;
+ }
+
+.like a {
+   width:100px;
+   height:40px;
+   color: black;
+   text-decoration: none;
+}
+
+.like a:hover{
+   text-decoration: underline;
+}
+
+.general-button{
+   background-color: white;
+   color: black;
+   border: 2px solid black;
+   transition-duration: 0.5s;
+}
+
+.general-button:hover{
+   background-color: black;
+   color: white;
+}
+
+

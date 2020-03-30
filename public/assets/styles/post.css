@@ -1,0 +1,68 @@
+body{
+    margin: 0px;
+    margin-top:50px;
+}
+
+#navbar {
+    text-align:center;
+    overflow:hidden;
+    background-color: #333;
+    position: fixed; 
+    top: 0;
+    width: 100%; 
+}
+  
+#navbar a {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding:14px 16px;
+    text-decoration: none;
+}
+
+#navbar a:hover {
+    background: #ddd;
+    color: black;
+}
+
+.post{
+    margin:40px;
+ }
+ 
+ .username{
+     text-align:center;
+     width: 300px;
+     margin: 0 auto;
+ }
+ 
+ .time{
+     text-align:center;
+     width: 300px;
+     margin: 0 auto;
+ }
+ 
+ .caption{
+     text-align:center;
+     width: 300px;
+     margin: 0 auto;
+ }
+ 
+ .image{
+     width: 500px;
+     height:500px;
+     margin: 0 auto;
+ }
+ .image img{
+     width: 100%;
+     height:100%;
+ }
+
+ .comments{
+     text-align: center;
+ }
+
+ .comment{
+     margin: 0 auto;
+     width:20%;
+     text-align: left;
+ }

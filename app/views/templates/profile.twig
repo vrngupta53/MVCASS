@@ -6,35 +6,65 @@
     <script src="/assets/scripts/like.js"></script>
     <script src="/assets/scripts/comment.js"></script>
     <script src="/assets/scripts/profile.js"></script>
+    <link rel="stylesheet" href="/assets/styles/profile.css">
 
 {% endblock %}
 
 {% block body %}
-    <img src="/{{user.addr}}" alt = "">
-    <div id="div_msg"></div>
-    <p>Edit your Profile</p>
-    <label for="username">Username:</label>
-    <input type="text" id="username" value="{{user.username}}" name="username">
-    <input type="button" id="username-button" value="Change">
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password"/>
-    <input type="button" id="pass-button" value="Change">
-    <p>Change your profile photo</p>
-    <form action="" method="post" enctype="multipart/form-data">
-        Select image to upload:
-        <input type="file" name="imgupload" id="imgupload">
-        <input type="button" id="upload-button" value="Upload" >
-    </form>
-
+    {% include("templates/navbar.twig") %}
+    <div id="edit_profile">
+        <div class="image">
+            <img src="/{{user.addr}}" alt = "">
+        </div>
+        <div class="msg" id="div_msg"></div>
+        <p class="msg">Edit your Profile</p>
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" value="{{user.username}}" name="username">
+            <input type="button" class="general-button" id="username-button" value="Change">
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"/>
+            <input type="button" class="general-button" id="pass-button" value="Change">
+        </div>
+        <p class="msg">Change your profile photo</p>
+        <form action="" method="post" enctype="multipart/form-data">
+            Select image to upload:
+            <div id="div_hidden">
+                <input type="file" name="imgupload" id="imgupload">
+            </div>
+            <div id="div_choose">
+                <input type="button" class="general-button" name="choose-button" id="choose-button" value="Choose image">
+            </div>
+            <div>
+                <input type="button" class="general-button" id="upload-button" value="Upload" >
+            </div>
+        </form>
+    </div>
+    <p class="msg">Your posts</p>
     {% for post in posts %}
-        <h2>{{post.username}}</h2>
-        <p>{{post.created}}</p>
-        <p>{{post.caption}}</p>
-        <img src="/{{post.addr}}">
-        <div id="div_comm_{{post.id}}"></div>
-        <input type="button" id="butt-{{post.id}}" value="Like:{{post.likes}}" onclick = "likePosts({{post.id}})">
-        <a href="/post/{{post.id}}">Comments</a>
-        <input type="text" id="comm-{{post.id}}" placeholder="Comment">
-        <input type="button" id="comm-butt-{{post.id}}" value="submit" onclick="addComment({{post.id}})">
+        <div class="post">
+        <div class="username">
+            <h2>{{post.username}}</h2>
+        </div>
+        <div class="time">
+            <p>{{post.created}}</p>
+        </div>
+        <div class="caption">    
+            <p>{{post.caption}}</p>
+        </div>
+        <div class="image">
+            <img src="/{{post.addr}}">
+        </div>
+        <div class="like">
+            <input type="button" class="like-button" id="butt-{{post.id}}" value="Like:{{post.likes}}" onclick = "likePosts({{post.id}})">
+            <a href="/post/{{post.id}}">Comments</a>
+        </div>
+        <div class="comment">
+            <input type="text" id="comm-{{post.id}}" placeholder="Comment">
+            <input type="button" class="general-button" id="comm-butt-{{post.id}}" value="submit" onclick="addComment({{post.id}})">
+        </div>
+    </div>
     {% endfor %}
 {% endblock %}

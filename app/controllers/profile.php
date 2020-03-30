@@ -26,7 +26,13 @@ class Profile{
         if($field == "image"){
             $filename = $_FILES['file']['name'];
             $location = "assets/uploads/".$filename;
-            $response = \Model\User::add_profile_image($filename, $location, $email);
+            $allowed = array('gif', 'png', 'jpg', 'jpeg');
+            $ext = pathinfo($filename, PATHINFO_EXTENSION);
+            if (!in_array($ext, $allowed)) {
+                $response = 1;
+            }else{
+                $response = \Model\User::add_profile_image($filename, $location, $email);
+            }
             echo $response;
         }
         else if($field == "username"){

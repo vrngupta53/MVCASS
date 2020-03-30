@@ -12,7 +12,7 @@ $(document).ready(function(){
             processData: false,
             success: function(response){
                 if(response != 0){
-                    let msg = "file upload unsuccessful";
+                    let msg = "Image upload unsuccessful";
                     $("#div_msg").html(msg);
                 }else{
                     window.location = "/profile";
@@ -43,5 +43,9 @@ $(document).ready(function(){
                 window.location = "/profile";
             }
         })
+    });
+
+    $("#choose-button").click(function(){
+        $("#imgupload").click();
     });
 });

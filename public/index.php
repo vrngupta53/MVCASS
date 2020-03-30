@@ -12,5 +12,6 @@ Toro::serve(array(
     "/comment" => "\Controller\Comment",
     "/profile" => "\Controller\Profile",
     "/profile/:string" => "\Controller\Profile",
-    
+    "/logout" => "\Controller\Logout",
+
 ));

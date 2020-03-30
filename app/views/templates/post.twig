@@ -2,12 +2,33 @@
 
 {% block title %}Post by {{post.username}}{% endblock %}
 
+{% block includes %}
+    <link rel="stylesheet" href="/assets/styles/post.css">
+{% endblock %}
+
 {% block body %}
-    <h1>{{post.username}}</h1>
-    <p>{{post.caption}}</p>
-    <img src="/{{post.addr}}">
-    <strong>Comments</strong></br>
-    {% for comment in comments %}
-    <p><strong>{{comment.username}}:</strong> {{comment.comment}}</p>
-    {% endfor %}
+    {% include("templates/navbar.twig") %}
+    <div class="post">
+        <div class="username"> 
+            <h2>{{post.username}}</h2>
+        </div>
+        <div class="time">
+            <p>{{post.created}}</p>
+        </div>
+        <div class="caption">    
+            <p>{{post.caption}}</p>
+        </div>
+        <div class="image">
+            <img src="/{{post.addr}}">
+        </div>
+    </div>
+    <div class="comments">
+        <strong>Comments</strong></br>
+        {% for comment in comments %}
+        <div class="comment">
+            <p><strong>{{comment.username}}:</strong> {{comment.comment}}</p>
+        </div>
+        {% endfor %}
+    </div>
+    
 {% endblock %}

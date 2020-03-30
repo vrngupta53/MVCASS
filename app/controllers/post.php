@@ -23,13 +23,16 @@ class Post{
         }
 
         $filename = $_FILES['file']['name'];
+        $allowed = array('gif', 'png', 'jpg', 'jpeg');
         $location = "assets/uploads/".$filename;
+        $ext = pathinfo($filename, PATHINFO_EXTENSION);
         $caption = $_POST["caption"];
         $email = $_SESSION["email"];
-
-        //insert filechecks here
-
-        $response = \Model\Post::upload($filename, $location, $email, $caption);
+        if (!in_array($ext, $allowed)) {
+            $response = 1;
+        }else{
+            $response = \Model\Post::upload($filename, $location, $email, $caption);
+        }
         echo $response;
     }
 }
